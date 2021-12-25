@@ -1,6 +1,61 @@
-/*Nos permite pedir datos al usuario*/
+/*Operadores*/
 
-let nombre = prompt('Ingresa tu nombre (s)'); 
-let apellidos = prompt('Ingresa tu apellido (s)'); 
-let edad = prompt('Ingresa tu edad'); 
-let telefono = prompt('Ingresa tu numero'); 
+function uno() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 == num2)
+}
+
+function dos() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 += num2)
+}
+
+function tres() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 -= num2)
+}
+
+function cuatro() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 *= num2)
+}
+
+function cinco() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 /= num2)
+}
+
+function seis() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 %= num2)
+}
+
+function siete() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 **= num2)
+}
+
+function ocho() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 <<= num2)
+}
+
+function nueve() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 >>>= num2)
+}
+
+function diez() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 &= num2)
+}
+
+function once() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 ^= num2)
+}
+
+function doce() {
+    var num1 = 10, num2 = 2; 
+    alert(num1 |= num2)
+}

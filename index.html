@@ -5,18 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png">
+    <link rel="stylesheet" href="css/estilos.css">
     <title>Curso JS</title>
 </head>
 <body>
-    <!--Estilos en linea-->
-    <h1 onclick="alert('Hola mundo!')">Hola mundo!</h1>
-
-    <!--
-    <script type="text/javascript">
-        alert('Hola mundillo')
-    </script>
-    -->
-    
+    <header>
+        <p>X = 10</p>
+        <p>Y = 2</p>
+    </header>
+    <section class="container">
+        <input type="button" value="x = y" onclick="uno()">
+        <input type="button" value="x += y" onclick="dos()">
+        <input type="button" value="x -= y" onclick="tres()">
+        <input type="button" value="x *= y" onclick="cuatro()">
+        <input type="button" value="x /= y" onclick="cinco()">
+        <input type="button" value="x %= y" onclick="seis()">
+        <input type="button" value="x **= y" onclick="siete()">
+        <input type="button" value="x <<= y" onclick="ocho()">
+        <input type="button" value="x >>>= y" onclick="nueve()">
+        <input type="button" value="x &= y" onclick="diez()">
+        <input type="button" value="x ^= y" onclick="once()">
+        <input type="button" value="x |= y" onclick="doce()">
+    </section>
     <script src="js/funciones.js"></script>
 </body>
 </html>
