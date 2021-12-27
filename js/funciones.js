@@ -1,12 +1,18 @@
-/*Operadores de comparación*/
+/*Operadores de lógicos*/
 
-let num1 = 23, num2 = 13, text1 = "23", text2 = "texto 2"
+let num1 = 10; 
+let num2 = 21; 
+let num3 = 32; 
+let num4 = 10;
 
-document.write(text1 == text2); 
+resultado =  (num3 > num1) || !((num1 > num2) && (num1 >= num4)); 
+/*Devuelve true*/
+
+document.write(resultado)
+
 
 /*
-    == comparación  
-    >= mayor o igual
-    <= menor o igual
-    != diferente que
+    && obliga a que las dos partes de la condicion se cumplan. 
+    || Con que una parte de la condicion se cumpla devuelve true. 
+    ! Cambia el valor de la condicion, si se devuelve true lo cambia a false. 
 */
