@@ -1,18 +1,23 @@
-/*Operadores de lógicos*/
+/*Condicionales "if"*/
 
-let num1 = 10; 
-let num2 = 21; 
-let num3 = 32; 
-let num4 = 10;
+nombre = prompt('Ingresa tu nombre porfavor')
+edad = parseInt(prompt('Ingresa tu edad por favor'));
 
-resultado =  (num3 > num1) || !((num1 > num2) && (num1 >= num4)); 
-/*Devuelve true*/
+if (edad > 18 && edad < 22) {
+    document.write(`Felicidades ${nombre}, eres mayor de edad en México`)
+}
 
-document.write(resultado)
+else if (edad >= 22) {
+    document.write(`Felicidades ${nombre}, eres mayor de edad en EU`);
+}
 
+else if (edad < 19){
+    document.write(`Lo sentimos ${nombre}, no eres mayor de edad`);
+}
 
 /*
-    && obliga a que las dos partes de la condicion se cumplan. 
-    || Con que una parte de la condicion se cumpla devuelve true. 
-    ! Cambia el valor de la condicion, si se devuelve true lo cambia a false. 
+    Se recomienda que al momento de realizar comparaciones se use
+    1 if (para la condicion principal)
+    else if (los que se necesiten)
+    else (por ultimo un else como final por si todas las comparaciones anteriores no se cumplieron)
 */
