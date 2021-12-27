@@ -1,6 +1,12 @@
-/*Concatenación*/
-let nombre = 'Genaro Javier', ap = 'Perez Lopez', edad = 21; 
+/*Operadores de comparación*/
 
-let direccion = `Mi nombre completo es: ${nombre} ${ap} y tengo ${edad} años`;
+let num1 = 23, num2 = 13, text1 = "23", text2 = "texto 2"
 
-alert(direccion); 
+document.write(text1 == text2); 
+
+/*
+    == comparación  
+    >= mayor o igual
+    <= menor o igual
+    != diferente que
+*/
