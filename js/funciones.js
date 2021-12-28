@@ -1,23 +1,31 @@
-/*Condicionales "if"*/
+/*Historia de Cofla*/
+let preRoberto = parseInt(prompt('Ingresar presupuesto de Roberto')); 
+let prePedro = parseInt(prompt('Ingresar presupuesto de Pedro')); 
+let preCofla = parseInt(prompt('Ingresar presupuesto de Cofla')); 
 
-nombre = prompt('Ingresa tu nombre porfavor')
-edad = parseInt(prompt('Ingresa tu edad por favor'));
-
-if (edad > 18 && edad < 22) {
-    document.write(`Felicidades ${nombre}, eres mayor de edad en México`)
+if (preCofla < 0.6) {
+    alert('El presupuesto es insuficiente para cualquier producto');
+}
+else if (preCofla >= 0.6 && preCofla < 1){
+    alert('Tu helado ideal es el de agua');
 }
 
-else if (edad >= 22) {
-    document.write(`Felicidades ${nombre}, eres mayor de edad en EU`);
+else if (preCofla >= 1 && preCofla < 1.6){
+    alert('Tu helado ideal es el de crema');
 }
 
-else if (edad < 19){
-    document.write(`Lo sentimos ${nombre}, no eres mayor de edad`);
+else if (preCofla >= 1.6 && preCofla < 1.7){
+    alert('Tu helado ideal es el de heladovich');
 }
 
-/*
-    Se recomienda que al momento de realizar comparaciones se use
-    1 if (para la condicion principal)
-    else if (los que se necesiten)
-    else (por ultimo un else como final por si todas las comparaciones anteriores no se cumplieron)
-*/
+else if (preCofla >= 1.7 && preCofla < 1.8){
+    alert('Tu helado ideal es el de helardo');
+}
+
+else if (preCofla >= 1.8 && preCofla < 2.9){
+    alert('Tu helado ideal es el de confites');
+}
+
+else if (preCofla >= 2.9){
+    alert('Tu helado ideal es el de Pote de 1/4 kg');
+}
