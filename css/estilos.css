@@ -1,70 +1,7 @@
 * {
-    margin: 0;
+    margin: 1rem;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.cards-helado {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.card-Helado {
-    min-width: 300px;
-    height: 400px;
-    border-radius: 2rem;
-    margin: 2rem 1rem;
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem;
-    background-position: bottom;
-    background-size: cover;
-    box-shadow: 10px 10px 5px #778899; 
-}
-
-.info-Helado {
-    width: 100%;
-    height: 20%;
-    background-color: #fff;
-    position: relative;
-    border-radius: 1.2rem;
-    padding: 1rem;
-    font-size: 12px;
-}
-
-.info-Helado p {
-    margin-top: 0.3rem;
-    font-size: 1rem;
-}
-
-.card-Helado:first-child {
-    background-image: url(https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
-}
-
-.card-Helado:nth-child(2) {
-    background-image: url(https://images.unsplash.com/photo-1623595119708-26b1f7300075?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=383&q=80);
-}
-
-.card-Helado:nth-child(3) {
-    background-image: url(https://images.unsplash.com/photo-1477505982272-ead89926a577?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
-}
-
-.card-Helado:nth-child(4) {
-    background-image: url(https://images.unsplash.com/photo-1488900128323-21503983a07e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
-}
-
-.card-Helado:nth-child(5) {
-    background-image: url(https://images.unsplash.com/photo-1563589173312-476d8c36b242?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80);
-}
-
-.card-Helado:nth-child(6) {
-    background-image: url(https://images.unsplash.com/photo-1590080962330-747c6aba8028?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80);
-}
-
-.card-Helado:last-child {
-    background-image: url(https://images.unsplash.com/photo-1580915411954-282cb1b0d780?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
+    font-size: 2rem;
 }
