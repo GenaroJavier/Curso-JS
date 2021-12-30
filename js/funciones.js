@@ -1,15 +1,8 @@
-/*Arrays Asociativos (Objetos)*/
+/*while*/
 
-let persona = {
-    nombre: 'Genaro', 
-    apP: 'Perez', 
-    apM: 'Lopez', 
-    fecNac: '12/03/00', 
-    curp: 'PELG000312HDFRPNA7'
+let cont = 0; 
+
+while (cont < 10) {
+    cont++;
+    document.write(cont + '<br>')
 }
-
-document.write(`<b>Descripción:</b><br>
-Mi nombre completo es: <b class="especial">${persona.nombre} ${persona.apP} ${persona.apM}</b>,<br>
-naci el <b>${persona.fecNac}</b>,<br>
-y mi curp es: <b>${persona.curp}</b>. 
-`)
