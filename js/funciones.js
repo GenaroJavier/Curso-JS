@@ -1,9 +1,9 @@
-/*Do while*/
-let contador = 0; 
+/*For*/
 
-do {
-    document.write(`${contador} Te mando un saludote <br>`)
-    contador++;
+for (let tabla = 1, j=1; tabla<=10; tabla++) {
+    document.write(`<h2 class='subtitulo'>Tabla del ${tabla}<h2>`)
+    for (let i=1; i<=10; i++) {
+        document.write(`${j} X ${i} = ${i*j}<br>`)
+    }
+    j++;
 }
-
-while (contador <= 10)
