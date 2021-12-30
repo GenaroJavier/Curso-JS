@@ -4,8 +4,14 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
+    text-align: center;
+    color: green;
 }
 
-.especial {
-    color: green;
+body {
+    margin: 2rem 0;
+}
+
+.texto {
+    color: #7f5539;
 }
