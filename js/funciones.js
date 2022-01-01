@@ -1,19 +1,22 @@
-/*For*/
+/*For in*/
 
-/*Esto es un for basico*/
-for (let i = 0; i<=10; i++) {
-    /*Lo que el continue nos permite, en pocas palabras
-    es saltar la iteracion del for, para este ejemplo 
-    realize un for basico que va desde 0 a 10, por cada
-    iteracion este la imprime en el documento de html.
+let alumnos = ['Genaro', 'Javier', 'Pepe', 'Dalto']
 
-    Por cada iteracion nosotros comparamos, si el contador del for
-    vale 8, cuando esta condicion se cumpla, se especifica el continue
-    por ende esta iteracion se omite y pasa a la siguiente, como 
-    resultado tenemos que el numero 8 no se imprime en nuestro for.
-    */
-    if(i == 8) {
-        continue; 
-    }
-    document.write(`${i}<br>`);
+
+/*Nos devuelve la posicion de los elementos*/
+for (let alumno in alumnos) {
+    document.write(`${alumno} <br>`); 
 }
+
+/*Nos devuelve los elementos del array*/
+for (let alumno in alumnos) {
+    document.write(`${alumnos[alumno]} <br>`); 
+}
+
+for (let alumno of alumnos) {
+    if (alumno == 'Genaro') {
+        continue;
+    }
+    document.write(`${alumno} <br>`); 
+}
+
