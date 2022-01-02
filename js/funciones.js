@@ -1,22 +1,7 @@
-/*For in*/
+let nombre = prompt('Ingresa tu nombre'); 
 
-let alumnos = ['Genaro', 'Javier', 'Pepe', 'Dalto']
-
-
-/*Nos devuelve la posicion de los elementos*/
-for (let alumno in alumnos) {
-    document.write(`${alumno} <br>`); 
+function Saludar(nombre) {
+    alert(`Hola ${nombre}`);
 }
 
-/*Nos devuelve los elementos del array*/
-for (let alumno in alumnos) {
-    document.write(`${alumnos[alumno]} <br>`); 
-}
-
-for (let alumno of alumnos) {
-    if (alumno == 'Genaro') {
-        continue;
-    }
-    document.write(`${alumno} <br>`); 
-}
-
+Saludar(nombre); 
