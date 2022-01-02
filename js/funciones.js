@@ -1,7 +1,7 @@
 let nombre = prompt('Ingresa tu nombre'); 
 
-let saludar = function(nom) {
-    alert(`Hola ${nom}`);
+function saludar (nom) {
+    return `Hola ${nom}`
 }
 
-saludar(nombre); 
+alert(saludar(nombre));
