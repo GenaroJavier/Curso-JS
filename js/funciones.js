@@ -1,19 +1,24 @@
-let numero1 = parseInt(prompt("Ingresa el numero 1"));
-let numero2 = parseInt(prompt("Ingresa el numero 2"));
-let nombre = prompt('Cual es tu nombre?');
+let primero = false; 
 
-//funcion flecha 
-const sumar = (num1, num2) => {
-    return (num1 + num2)
+const VerificarEntrada = (hraEntrada) => {
+    let edad = parseInt(prompt('Introduce tu edad'));
+    
+    if (edad >= 18) {
+        if (primero == false && hraEntrada >= 2) {
+            alert('Bienvenido tu entrada es gratis'); 
+            primero = true; 
+        } else {
+            alert('Bienvenido por favor pasa a pagar tu entrada'); 
+        }
+    }
+    else {
+        alert('Acceso denegado, necesitas ser mayor de edad')
+    }
 }
 
-alert(`El resultado es: ${sumar(numero1, numero2)}`);
-
-//funcion flecha con un parametro, cuando se utiliza un solo parametro
-//no es necesario poner los parentesis. 
-
-const saludar = nomb => {
-    return `Hola ${nombre}`;
-}
-
-alert(saludar()); 
+VerificarEntrada(1)
+VerificarEntrada(3)
+VerificarEntrada(0.2)
+VerificarEntrada(1)
+VerificarEntrada(0.3)
+VerificarEntrada(3)
