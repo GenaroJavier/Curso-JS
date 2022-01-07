@@ -1,8 +1,6 @@
-//Clases 
-/*Cuando se trabaja con objetos, se recomienda usar 
-en lugar de let. */
+//Herencia
 
-class persona {
+class Persona {
     constructor(nombre, edad, nacionalidad,) {
         this.nombre = nombre; 
         this.edad = edad;
@@ -14,19 +12,25 @@ class persona {
     imprimirPersona () {        
         document.write(`Mi nombre es: ${this.nombre} tengo ${this.edad} años y soy ${this.nacionalidad} <br>`);
     }
+
+    MayordeEdadl() {
+        if (this.edad >= 18) return true; 
+        else return false; 
+    }
 }
 
-let Genaro = new persona('Genaro Javier', 21, 'Mexicano');
-let Emy = new persona('Emy', 35, 'Estadunidense');
-let Luffy = new persona('Monkey D Luffy', 19, 'East Blue')
+let Genaro = new Persona('Genaro', 21, 'Mexicano'); 
 
-Genaro.imprimirPersona();
-console.log(Genaro); 
-Emy.imprimirPersona();
-console.log(Emy); 
-Luffy.imprimirPersona();
-console.log(Luffy); 
+class Mexicano extends Persona {
+    constructor(nombre, edad, estado) {
+        super(nombre, edad); 
+        this.nacionalidad = 'Mexicano'; 
+        this.estado = estado; 
+    }
+}
 
-/*La diferencia entre un metodo y un funcion es que:
-Un metodo debe estar dentro de una clase 
-y la funcion no*/
+let Jesus = new Mexicano('Jesus', 15, 'Hidalgo'); 
+
+document.write(`Mi nombre es ${Genaro.nombre} tengo ${Genaro.edad} años, soy ${Genaro.nacionalidad} <br>`); 
+
+document.write(`Mi nombre es ${Jesus.nombre} tengo ${Jesus.edad} años, soy ${Jesus.nacionalidad} y vivo en ${Jesus.estado} <br>`); 
