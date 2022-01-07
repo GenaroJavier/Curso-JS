@@ -1,136 +1,32 @@
-/*Historia de cofla 3.0*/
-//Calculadora
+//Clases 
+/*Cuando se trabaja con objetos, se recomienda usar 
+en lugar de let. */
 
-var num1, resultado, operacion; 
-
-const uno = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+1;
-}
-
-const dos = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+2;
-}
-
-const tres = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+3;
-}
-
-const cuatro = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+4;
-}
-
-const cinco = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+5;
-}
-
-const seis = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+6;
-}
-
-const siete = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+7;
-}
-
-const ocho = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+8;
-}
-
-const nueve = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+9;
-}
-
-const cero = () => {
-    let dato = document.getElementById('screen').value; 
-    document.getElementById('screen').value = dato+0;
-}
-
-const punto = () => {
-    let dato = document.getElementById('screen').value; 
-    let punto = false; 
-    for (let letra of dato) {
-        if (letra == '.') {
-            punto = true; 
-            alert('Solo puedes usar un punto decimal')
-            break; 
-        }
+class persona {
+    constructor(nombre, edad, nacionalidad,) {
+        this.nombre = nombre; 
+        this.edad = edad;
+        this.nacionalidad = nacionalidad;
     }
-    if (punto == false) document.getElementById('screen').value = dato+'.';
-}
 
-const borrar = () =>{
-    document.getElementById('screen').value = '';
-}
+    /*No podemos usar funciones flecha en clases*/
 
-const pedirnumero = () => {
-    return (document.getElementById('screen').value); 
-}
-
-const dividir = () => {
-    num1 = parseFloat(pedirnumero()); 
-    borrar();
-    operacion = 1; 
-}
-
-const residuo = () => {
-    num1 = parseFloat(pedirnumero()); 
-    borrar();
-    operacion = 2; 
-}
-
-const multiplicacion = () => {
-    num1 = parseFloat(pedirnumero()); 
-    borrar();
-    operacion = 3; 
-}
-
-const resta = () => {
-    num1 = parseFloat(pedirnumero()); 
-    borrar();
-    operacion = 4; 
-}
-
-const suma = () => {
-    num1 = parseFloat(pedirnumero()); 
-    borrar();
-    operacion = 5; 
-}
-
-const potencia = () => {
-    num1 = parseFloat(pedirnumero()); 
-    borrar();
-    operacion = 6; 
-}
-
-const imprimir = () => {
-    let num2 = parseFloat(pedirnumero()); 
-
-    switch (operacion) {
-        case 1:
-            document.getElementById('screen').value = (num1/num2);       
-            break;
-        case 2:
-            document.getElementById('screen').value = (num1%num2);       
-            break;
-        case 3:
-            document.getElementById('screen').value = (num1*num2);       
-            break;
-        case 4:
-            document.getElementById('screen').value = (num1-num2);       
-            break;
-        case 5:
-            document.getElementById('screen').value = (num1+num2);       
-            break;
-        case 6:
-            document.getElementById('screen').value = (num1**num2);       
-            break;
+    imprimirPersona () {        
+        document.write(`Mi nombre es: ${this.nombre} tengo ${this.edad} años y soy ${this.nacionalidad} <br>`);
     }
 }
+
+let Genaro = new persona('Genaro Javier', 21, 'Mexicano');
+let Emy = new persona('Emy', 35, 'Estadunidense');
+let Luffy = new persona('Monkey D Luffy', 19, 'East Blue')
+
+Genaro.imprimirPersona();
+console.log(Genaro); 
+Emy.imprimirPersona();
+console.log(Emy); 
+Luffy.imprimirPersona();
+console.log(Luffy); 
+
+/*La diferencia entre un metodo y un funcion es que:
+Un metodo debe estar dentro de una clase 
+y la funcion no*/
