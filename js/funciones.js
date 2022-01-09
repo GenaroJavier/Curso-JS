@@ -1,23 +1,50 @@
-//Metodos estaticos
-/*Podemos hacer uso de los metodos estaticos siempre y cuando no utilizemos las variables de la clase*/
-class Persona {
-    constructor(nombre, edad, nacionalidad,) {
-        this.nombre = nombre; 
-        this.edad = edad;
-        this.nacionalidad = nacionalidad;
+class Celular {
+    constructor (modelo, color, peso, resolPantall, resolCamara, memRam) {
+        this.modelo = modelo; 
+        this.color = color;
+        this.peso = peso;
+        this.resolPantall = resolPantall;
+        this.resolCamara = resolCamara;
+        this.memRam = memRam; 
     }
 
-    /*No podemos usar funciones flecha en clases*/
-
-    imprimirPersona () {        
-        document.write(`Mi nombre es: ${this.nombre} tengo ${this.edad} años y soy ${this.nacionalidad} <br>`);
+    static Encender () {
+        alert(`Encendiendo`); 
     }
 
-    static saludar () {
-        //El confirm te permite realizar una pregunta y te devuelve true o false segun el usuario elija. 
-        document.write(confirm('Te gusta las canciones de Kalimba')+'<br>'); 
+    static Reiniciar () {
+        alert(`Reiniciando`); 
+    }
+
+    static Apagar () {
+        alert(`Apagando`);
+    }
+
+    static TomarFoto () {
+        document.write(`<br><img src="https://images.unsplash.com/photo-1641611605871-ae20d4514b74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">`); 
+    }
+
+    static TomarFoto () {
+        alert('Grabando');
+    }
+
+    info () {
+        document.write(`
+        <br>
+        <b>Modelo:</b> ${this.modelo} <br>
+        <b>Color:</b> ${this.color} <br>
+        <b>Peso:</b> ${this.peso} <br>
+        <b>Resolución de pantalla:</b> ${this.resolPantall} <br>
+        <b>Resolución de camara:</b> ${this.resolCamara} <br>
+        <b>RAM:</b> ${this.memRam} <br>
+        `); 
     }
 }
-let Genaro = new Persona ('Genaro Javier', 21, 'Mexicano'); 
-Persona.saludar(); 
-document.write(Genaro.edad >= 18 ? 'Eres mayor de edad' : 'No eres mayor de edad')
+
+const MotoG = new Celular('Moto G', 'Negro', '80g', '1200px X 720px', '1200px X 720px', '8 Gb');
+const Samsung = new Celular('Note 9', 'Blanco', '110g', '3200px X 1200px', '1200px X 720px', '16 Gb');
+const Huawei = new Celular('Huawei XL 3', 'Azul cielo', '120g', '1220px X 820px', '1300px X 900px', '32 Gb');
+
+MotoG.info(); 
+Samsung.info(); 
+Huawei.info(); 
