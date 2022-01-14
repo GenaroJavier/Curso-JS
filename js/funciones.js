@@ -1,63 +1,48 @@
-//Metodos cadenas 
-let cadena = 'cadena de prueba'; 
-let cadena2 = 'prueba'; 
+let nombres = ['Genaro', 'Javier', 'Pedro', 'Maria', 'Abelardo', 'Ana'];
+let numeros = [221, 12, 3, 11, 32, 213, 43, 31, 5]
 
-//concatena dos strings
-    alert(cadena.concat(cadena2)); 
+//elimina la ultima posicion del arreglo. 
+    nombres.pop(); 
 
-//Si una cadena comienza con los caracteres de otro cadena, devuelve true, sino devuelve false, cabe menciaonar que este metodo es muy estricto.
-    alert(cadena.startsWith(cadena2)); 
+//elimina la primera posicion del arreglo. 
+    nombres.shift(); 
 
-//Si una cadena termina con los caracteres de otro cadena, devuelve true, sino devuelve false, cabe menciaonar que este metodo es muy estricto.
-    alert(cadena.endsWith(cadena2)); 
+//Agregamos un elemento al final del arreglo.
+    nombres.push('Juancito')
 
-//Si una cadena puede encontrarse dentro de otra cadena, devulve true, si no devuelve false. 
-    alert(cadena.includes(cadena2));
+//Invierte el arreglo
+    nombres.reverse(); 
 
-//Devuelve el indice del primer caracter de la cadena, si no existe, devuelve -1
-    alert(cadena.indexOf(cadena2)); 
+//Agrega uno o mas elementos al inicio del array
+    nombres.unshift('Julio', 'Jaime', 'Ricardo');
 
-//Devuelve el indice de la ultima posicion del  caracter de la cadena, si no existe, devuelve -1
-    alert(cadena.lastIndexOf(cadena2)); 
+//Ordena los elementos del array, es un metodo inestable, por que pasa los valores a strings, asi que es mas recomendable usar unicamente con strings.
+    nombres.sort(); 
 
-//Rellenar cadena al principio con los caracteres deseados. 
-    alert(cadena.padStart(22, '*'));
+//Este metodo nos permite insertar o eliminar valores en medio del array. ejemplo 
+// array.splice(donde empiezo a eliminar o insertar,cuantos elimino, que inserto, que inserto, que inserto); 
+    
+    nombres.splice(2, 3, 'Zoro', 'Chopper', 'Nami')
 
+//Une todos los elementos de una matriz (u objeto similar) en una cadena y la devulve. OJO: devuelve un string, por eso dice UNE 
+    let nuevoArreglo = nombres.join('<br> Elemento:'); 
+    document.write('Elemento: ' + nuevoArreglo);
 
-//Rellenar cadena al final con los caracteres deseados. 
-    alert(cadena.padEnd(22, '*'));
+//Devuelve una parte del array dentro de un nuevo array empezando por inicio hasta el fin (fin no incluido)
+    let nombreSelec = nombres.slice(1, 3); 
 
-//Repetir una cadena. 
-    alert(cadena.repeat(3)); 
+    document.write(nombreSelec); 
 
-/*Divide la cadena de acuerdo a como le especifiquemos nosotros, por ejemplo
-tenemos la oracion 'Hola-Genaro-Javier'
-si nosotros especificamos que queremos que la oracion se divida en un arreglo y que en cada posicion 
-del arreglo este la palabra antes del - , tambien podemos especificar el espacio como en el siguiente ejemplo.
-*/
-    let res = cadena.split(' '); 
-    alert(res[0]); 
-    alert(res[1]); 
-    alert(res[2]); 
+    for (let nombre of nombres) {
+        //document.write(nombre + '<br>'); 
+    }
 
-//Nos retorna un pedazo de la cadena, segun nosotros le especifiquemos. 
-    alert(cadena.substring(0,3));
+//Filter, funciona como el foreach pero con la opcion de verificar si se cumple una condicion. 
+    let resultado = nombres.filter((nombre) => nombre.length > 6); 
+    document.write(resultado); 
 
-//Retorna la cadena en minusculas
-    alert(cadena.toLowerCase());
+//Es un metodo que nos permite recorrer un arreglo de forma mas facil
+    nombres.forEach(nombre => document.write(`${nombre}, `)); 
 
-//Retorna la cadena en mayusculas
-    alert(cadena.toUpperCase());
-
-//convierte un dato en sting. 
-    let edad = 31; 
-    alert(typeof(edad.toString())); 
-
-//Elimina los espacios en blanco al principio o final de la oracion
-    alert(cadena.trim());
-
-//Elimina los espacios en blanco al principio del string;
-    alert(cadena.trimStart());
-
-//Elimina los espacios en blanco al final del string;
-    alert(cadena.trimEnd());
+//Con -1 nos referimos al final del array
+//Los metodos de Strings que vimos anteiormente tambien nos sirven en arrays. 
