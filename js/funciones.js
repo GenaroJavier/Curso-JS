@@ -1,48 +1,25 @@
-let nombres = ['Genaro', 'Javier', 'Pedro', 'Maria', 'Abelardo', 'Ana'];
-let numeros = [221, 12, 3, 11, 32, 213, 43, 31, 5]
+//Objeto Math
+let num = prompt('Ingrese un numero: '); 
 
-//elimina la ultima posicion del arreglo. 
-    nombres.pop(); 
+document.write(`<h2>Raiz Cuadrada: </h2> ${Math.sqrt(num)}`);
 
-//elimina la primera posicion del arreglo. 
-    nombres.shift(); 
+document.write(`<h2>Raiz Cubica: </h2> ${Math.cbrt(num)}`);
 
-//Agregamos un elemento al final del arreglo.
-    nombres.push('Juancito')
+document.write(`<h2>Raiz Maximo (2, 31, 34, 15, 652, 1234, 124): </h2> ${Math.max(2, 31, 34, 15, 652, 1234, 124)}`);
 
-//Invierte el arreglo
-    nombres.reverse(); 
+document.write(`<h2>Raiz Minimo (2, 31, 34, 15, 652, 1234, 124): </h2> ${Math.min(2, 31, 34, 15, 652, 1234, 124)}`);
 
-//Agrega uno o mas elementos al inicio del array
-    nombres.unshift('Julio', 'Jaime', 'Ricardo');
+document.write(`<h2>Random: </h2> ${ Math.round((Math.random() * (num - 1) + 1)) }`);
 
-//Ordena los elementos del array, es un metodo inestable, por que pasa los valores a strings, asi que es mas recomendable usar unicamente con strings.
-    nombres.sort(); 
 
-//Este metodo nos permite insertar o eliminar valores en medio del array. ejemplo 
-// array.splice(donde empiezo a eliminar o insertar,cuantos elimino, que inserto, que inserto, que inserto); 
-    
-    nombres.splice(2, 3, 'Zoro', 'Chopper', 'Nami')
+//Redondea hacia abajo
+document.write(`<h2>Redondeo hacia abajo: </h2> ${ Math.floor(Math.sqrt(num)) }`);
 
-//Une todos los elementos de una matriz (u objeto similar) en una cadena y la devulve. OJO: devuelve un string, por eso dice UNE 
-    let nuevoArreglo = nombres.join('<br> Elemento:'); 
-    document.write('Elemento: ' + nuevoArreglo);
+//Redondea hacia un numero flotante mas preciso. 
+document.write(`<h2>Redondeo mas preciso: </h2> ${ Math.fround(Math.sqrt(num)) }`);
 
-//Devuelve una parte del array dentro de un nuevo array empezando por inicio hasta el fin (fin no incluido)
-    let nombreSelec = nombres.slice(1, 3); 
+//Redondea hacia el numero mas cercano puede ser arriba o abajo
+document.write(`<h2>Redondeo hacia el numero mas cercano : </h2> ${ Math.round(Math.sqrt(num)) }`);
 
-    document.write(nombreSelec); 
-
-    for (let nombre of nombres) {
-        //document.write(nombre + '<br>'); 
-    }
-
-//Filter, funciona como el foreach pero con la opcion de verificar si se cumple una condicion. 
-    let resultado = nombres.filter((nombre) => nombre.length > 6); 
-    document.write(resultado); 
-
-//Es un metodo que nos permite recorrer un arreglo de forma mas facil
-    nombres.forEach(nombre => document.write(`${nombre}, `)); 
-
-//Con -1 nos referimos al final del array
-//Los metodos de Strings que vimos anteiormente tambien nos sirven en arrays. 
+//elimina los decimales 
+document.write(`<h2>Eliminar decimales: </h2> ${ Math.trunc(Math.sqrt(num)) }`);
