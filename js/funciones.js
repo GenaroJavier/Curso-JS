@@ -1,25 +1,148 @@
-//Objeto Math
-let num = prompt('Ingrese un numero: '); 
+/*Historia de cofla 4.1*/
+//Calculadora 2.0
 
-document.write(`<h2>Raiz Cuadrada: </h2> ${Math.sqrt(num)}`);
+var num1, resultado, operacion;
 
-document.write(`<h2>Raiz Cubica: </h2> ${Math.cbrt(num)}`);
+const uno = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+1;
+}
 
-document.write(`<h2>Raiz Maximo (2, 31, 34, 15, 652, 1234, 124): </h2> ${Math.max(2, 31, 34, 15, 652, 1234, 124)}`);
+const dos = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+2;
+}
 
-document.write(`<h2>Raiz Minimo (2, 31, 34, 15, 652, 1234, 124): </h2> ${Math.min(2, 31, 34, 15, 652, 1234, 124)}`);
+const tres = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+3;
+}
 
-document.write(`<h2>Random: </h2> ${ Math.round((Math.random() * (num - 1) + 1)) }`);
+const cuatro = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+4;
+}
 
+const cinco = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+5;
+}
 
-//Redondea hacia abajo
-document.write(`<h2>Redondeo hacia abajo: </h2> ${ Math.floor(Math.sqrt(num)) }`);
+const seis = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+6;
+}
 
-//Redondea hacia un numero flotante mas preciso. 
-document.write(`<h2>Redondeo mas preciso: </h2> ${ Math.fround(Math.sqrt(num)) }`);
+const siete = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+7;
+}
 
-//Redondea hacia el numero mas cercano puede ser arriba o abajo
-document.write(`<h2>Redondeo hacia el numero mas cercano : </h2> ${ Math.round(Math.sqrt(num)) }`);
+const ocho = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+8;
+}
 
-//elimina los decimales 
-document.write(`<h2>Eliminar decimales: </h2> ${ Math.trunc(Math.sqrt(num)) }`);
+const nueve = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+9;
+}
+
+const cero = () => {
+    let dato = document.getElementById('screen').value;
+    document.getElementById('screen').value = dato+0;
+}
+
+const punto = () => {
+    let dato = document.getElementById('screen').value;
+    let punto = false;
+    for (let letra of dato) {
+        if (letra == '.') {
+            punto = true;
+            alert('Solo puedes usar un punto decimal')
+            break;
+        }
+    }
+    if (punto == false) document.getElementById('screen').value = dato+'.';
+}
+
+const borrar = () =>{
+    document.getElementById('screen').value = '';
+}
+
+const pedirnumero = () => {
+    return (document.getElementById('screen').value);
+}
+
+const dividir = () => {
+    num1 = parseFloat(pedirnumero());
+    borrar();
+    operacion = 1;
+}
+
+const residuo = () => {
+    num1 = parseFloat(pedirnumero());
+    borrar();
+    operacion = 2;
+}
+
+const multiplicacion = () => {
+    num1 = parseFloat(pedirnumero());
+    borrar();
+    operacion = 3;
+}
+
+const resta = () => {
+    num1 = parseFloat(pedirnumero());
+    borrar();
+    operacion = 4;
+}
+
+const suma = () => {
+    num1 = parseFloat(pedirnumero());
+    borrar();
+    operacion = 5;
+}
+
+const potencia = () => {
+    num1 = parseFloat(pedirnumero());
+    borrar();
+    operacion = 6;
+}
+
+const RaizCuadrada = () => {
+    num1 = parseFloat(pedirnumero());
+    borrar();
+    document.getElementById('screen').value = (Math.sqrt(num1));
+}
+
+const RaizCubica = () => {
+    num1 = parseFloat(pedirnumero());
+    borrar();
+    document.getElementById('screen').value = (Math.cbrt(num1));
+}
+
+const imprimir = () => {
+    let num2 = parseFloat(pedirnumero());
+
+    switch (operacion) {
+        case 1:
+            document.getElementById('screen').value = (num1/num2);
+            break;
+        case 2:
+            document.getElementById('screen').value = (num1%num2);
+            break;
+        case 3:
+            document.getElementById('screen').value = (num1*num2);
+            break;
+        case 4:
+            document.getElementById('screen').value = (num1-num2);
+            break;
+        case 5:
+            document.getElementById('screen').value = (num1+num2);
+            break;
+        case 6:
+            document.getElementById('screen').value = (num1**num2);
+            break;
+    }
+}
