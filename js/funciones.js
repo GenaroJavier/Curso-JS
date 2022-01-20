@@ -1,4 +1,4 @@
-/*Historia de cofla 4.2*/
+/*Historia de cofla 4.3*/
 class Materia {
     constructor(Profesor, nombre, alumnos) {
         this.Profesor = Profesor;
@@ -50,10 +50,20 @@ const alum1 = new Alumno('19181091', 'Cofla', 'Ramirez', 'Perez', '8 "B"'),
     alum7 = new Alumno('11209348', 'Jesus', 'Perez', 'Lopez', '8 "B"'),
     alum8 = new Alumno('32098122', 'Jose', 'Perez', 'Garcia', '6 "B"'),
     alum9 = new Alumno('63872113', 'Sebastian', 'Perez', 'Garcia', '8 "A"'),
-    alum10 = new Alumno('63729982', 'Mahetsi', 'Perez', 'Artega', '7 "A"');
+    alum10 = new Alumno('63729982', 'Mahetsi', 'Perez', 'Artega', '7 "A"'),
+    alum11 = new Alumno('18011218', 'Miguel', 'Reyes', 'Marquez', '5 "A"'),
+    alum12 = new Alumno('18011218', 'Miguel', 'Reyes', 'Marquez', '5 "A"'),
+    alum13 = new Alumno('18910111', 'Fernando', 'Velasquez', 'Diaz', '8 "B"'),
+    alum14 = new Alumno('18191901', 'Manuel', 'Angeles', 'Garcia', '7 "B"'),
+    alum15 = new Alumno('18921111', 'Marcos', 'Mera', 'Mera', '8 "A"'),
+    alum16 = new Alumno('18291921', 'Oliver', 'Camargo', 'Lopez', '5 "B"'),
+    alum17 = new Alumno('11209348', 'Jesus', 'Perez', 'Lopez', '8 "B"'),
+    alum18 = new Alumno('32098122', 'Jose', 'Perez', 'Garcia', '6 "B"'),
+    alum19 = new Alumno('63872113', 'Sebastian', 'Perez', 'Garcia', '8 "A"'),
+    alum20 = new Alumno('63729982', 'Mahetsi', 'Perez', 'Artega', '7 "A"');
 
 const materia1 = new Materia(prof1, 'Español', [alum1, alum2, alum3, alum4, alum5]);
-const materia2 = new Materia(prof3, 'Quimica', [alum1, alum2, alum3, alum4, alum5, alum6, alum7, alum8, alum9, alum10]);
+const materia2 = new Materia(prof3, 'Quimica', [alum1, alum2, alum3, alum4, alum5, alum6, alum7, alum8, alum9, alum10, alum11, alum12, alum13, alum14, alum15, alum16, alum17, alum18, alum19, alum20]);
 const materia3 = new Materia(prof5, 'Programación', [alum1, alum2, alum3, alum4, alum5]);
 const materia4 = new Materia(prof4, 'Cuidado de la salud', [alum9, alum2, alum3, alum4, alum5]);
 const materia5 = new Materia(prof6, 'Física teorica', [alum1, alum2, alum3, alum4, alum5]);
@@ -80,7 +90,7 @@ const listarMateriasCofla = () => {
 }
 
 const infoMaterias = (materia) => {
-    document.write(`<br>Información sobre la materia: <b>${materia}</b><br>`);
+    document.write(`<br>Información sobre la materia: <b>${materia}</b><br>`); 
     
     materiasEscuela.filter(BuscarMateria => (BuscarMateria.nombre == materia) ? document.write(`Impartida por: <b>${BuscarMateria.Profesor.nombreCompleto()}</b><br><br>Alumnos registrados:<br>`) :
     document.write(` `)
@@ -99,6 +109,25 @@ const infoMaterias = (materia) => {
     }
 }
 
-numMateriasCofla();
-listarMateriasCofla();
-infoMaterias(prompt('Introduce la materia que desees ver: '));
+const inscripcion = (materia) => {
+    let checkMateria = false; 
+    Principal:
+    for (let mat of materiasEscuela) {
+        if (mat.nombre == materia) {
+            let matricula = prompt('Ingresa tu numero de matricula: '); 
+            for (let alumno of mat.alumnos) {
+                if (alumno.Matricula == matricula) { alert('Este alumno ya ha sido registrado');  break Principal; ;}
+                else if (mat.alumnos.length < 20) {
+                    checkMateria = true;
+                    alert('Has sido registrado'); 
+                    break Principal; 
+                } else alert('Esta materia a alcanzado su maxima capacidad'); break Principal;
+            }
+        }
+    }
+}
+
+let matUsuario = prompt('Ingresa la materia a inscribirte: '); 
+
+inscripcion(matUsuario);
+infoMaterias(matUsuario); 
