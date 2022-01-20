@@ -1,133 +1,33 @@
-/*Historia de cofla 4.3*/
-class Materia {
-    constructor(Profesor, nombre, alumnos) {
-        this.Profesor = Profesor;
-        this.nombre = nombre;
-        this.alumnos = alumnos;
-    }
-}
-class Profesor {
-    constructor(Matricula, Nombre, Ap, Am, Titulo) {
-        this.Materia = Matricula;
-        this.Nombre = Nombre;
-        this.Ap = Ap;
-        this.Am = Am;
-        this.Titulo = Titulo;
-    }
+/*Metodos de consola*/
 
-    nombreCompleto() {
-        return `${this.Nombre} ${this.Ap} ${this.Am}`;
-    }
-}
+//Limpia la consola 
+console.clear(); 
 
-const prof1 = new Profesor('18011159', 'Genaro', 'Perez', 'Lopez', 'Ing. TICs'),
-    prof2 = new Profesor('18011213', 'Oracio', 'Martinez', 'Gutierrez', 'Ing. Sistemas'),
-    prof3 = new Profesor('11234121', 'Iris', 'Daniela', 'Angeles', 'Ing. Energias Renovables'),
-    prof4 = new Profesor('12389121', 'Martha', 'Lopez', 'Rodriguez', 'Ing. Enfermeria'),
-    prof5 = new Profesor('73198821', 'Javier', 'Cuadros', 'Francisco', 'Doc. Sistemas'),
-    prof6 = new Profesor('65498476', 'Sheldon', 'Lee', 'Cooper', 'Doc. Fisica');
+// Aparece un mensaje de error en la consola si la afirmacion es false, si la afirmacion es verdadera, no aparecera nada. 
+console.assert(5>2); 
 
-class Alumno {
-    constructor(Matricula, Nombre, Ap, Am, Grupo) {
-        this.Matricula = Matricula;
-        this.Nombre = Nombre;
-        this.Ap = Ap;
-        this.Am = Am;
-        this.Grupo = Grupo;
-    }
+//Muestra un mensaje de error
+console.error('Esto es un error'); 
 
-    nombreCompleto() {
-        return `${this.Nombre} ${this.Ap} ${this.Am}`;
-    }
-}
+//Emite un mensaje informativo a la consola web. En alguna navegadores incluye un icono.
+console.info('Esto es un mensaje con Informacion importante'); 
 
-const alum1 = new Alumno('19181091', 'Cofla', 'Ramirez', 'Perez', '8 "B"'),
-    alum2 = new Alumno('18011218', 'Miguel', 'Reyes', 'Marquez', '5 "A"'),
-    alum3 = new Alumno('18910111', 'Fernando', 'Velasquez', 'Diaz', '8 "B"'),
-    alum4 = new Alumno('18191901', 'Manuel', 'Angeles', 'Garcia', '7 "B"'),
-    alum5 = new Alumno('18921111', 'Marcos', 'Mera', 'Mera', '8 "A"'),
-    alum6 = new Alumno('18291921', 'Oliver', 'Camargo', 'Lopez', '5 "B"'),
-    alum7 = new Alumno('11209348', 'Jesus', 'Perez', 'Lopez', '8 "B"'),
-    alum8 = new Alumno('32098122', 'Jose', 'Perez', 'Garcia', '6 "B"'),
-    alum9 = new Alumno('63872113', 'Sebastian', 'Perez', 'Garcia', '8 "A"'),
-    alum10 = new Alumno('63729982', 'Mahetsi', 'Perez', 'Artega', '7 "A"'),
-    alum11 = new Alumno('18011218', 'Miguel', 'Reyes', 'Marquez', '5 "A"'),
-    alum12 = new Alumno('18011218', 'Miguel', 'Reyes', 'Marquez', '5 "A"'),
-    alum13 = new Alumno('18910111', 'Fernando', 'Velasquez', 'Diaz', '8 "B"'),
-    alum14 = new Alumno('18191901', 'Manuel', 'Angeles', 'Garcia', '7 "B"'),
-    alum15 = new Alumno('18921111', 'Marcos', 'Mera', 'Mera', '8 "A"'),
-    alum16 = new Alumno('18291921', 'Oliver', 'Camargo', 'Lopez', '5 "B"'),
-    alum17 = new Alumno('11209348', 'Jesus', 'Perez', 'Lopez', '8 "B"'),
-    alum18 = new Alumno('32098122', 'Jose', 'Perez', 'Garcia', '6 "B"'),
-    alum19 = new Alumno('63872113', 'Sebastian', 'Perez', 'Garcia', '8 "A"'),
-    alum20 = new Alumno('63729982', 'Mahetsi', 'Perez', 'Artega', '7 "A"');
+//Muestra un mensaje en la consola web (o el interprete de Js)
+console.log('Esto es un mensaje'); 
 
-const materia1 = new Materia(prof1, 'Español', [alum1, alum2, alum3, alum4, alum5]);
-const materia2 = new Materia(prof3, 'Quimica', [alum1, alum2, alum3, alum4, alum5, alum6, alum7, alum8, alum9, alum10, alum11, alum12, alum13, alum14, alum15, alum16, alum17, alum18, alum19, alum20]);
-const materia3 = new Materia(prof5, 'Programación', [alum1, alum2, alum3, alum4, alum5]);
-const materia4 = new Materia(prof4, 'Cuidado de la salud', [alum9, alum2, alum3, alum4, alum5]);
-const materia5 = new Materia(prof6, 'Física teorica', [alum1, alum2, alum3, alum4, alum5]);
+//Esta funcion toma un argumento obligatorio: data, que debe ser un array o un objeto y un parametro adicional columns y nos muestra 
+//un tabla en consola.
 
-let materiasEscuela = [materia1, materia2, materia3, materia4, materia5];
+console.table([1, 2, 3, 4, 5, 6]);
 
-const numMateriasCofla = () => {
-    let cont = 0;
-    for (let mat of materiasEscuela) {
-        mat.alumnos.filter(alumno => (alumno.Nombre == 'Cofla') ? cont++ : cont = cont);
-    }
-    document.write(`Cofla tomara: <b>${cont} materias </b><br>`);
-}
+//Imprime un mensaje de advertencia. 
+console.warn('Cuidado esto es un mensaje de advertencia'); 
 
-const listarMateriasCofla = () => {
-    document.write(`<br>Las materias que tomará son: <br>`);
-    materiasEscuela.forEach(materia => {
-        materia.alumnos.forEach(alumno => {
-            if (alumno.Nombre == 'Cofla') {
-                document.write(`<b>${materia.nombre}</b> impartida por el profesor: <b>${materia.Profesor.nombreCompleto()}</b><br>`);
-            }
-        });
-    });
-}
+//Despliega una lista interactiva de las propiedad del objeto Js especificado. 
+let persona = {
+    nombre: 'Genaro', 
+    ApP: 'Perez',
+    ApM: 'Lopez'
+};
 
-const infoMaterias = (materia) => {
-    document.write(`<br>Información sobre la materia: <b>${materia}</b><br>`); 
-    
-    materiasEscuela.filter(BuscarMateria => (BuscarMateria.nombre == materia) ? document.write(`Impartida por: <b>${BuscarMateria.Profesor.nombreCompleto()}</b><br><br>Alumnos registrados:<br>`) :
-    document.write(` `)
-    );
-
-    for (let mat of materiasEscuela) {
-        if (mat.nombre == materia) {
-            mat.alumnos.forEach(alumno => {
-                document.write(`
-            Matricula: <b>${alumno.Matricula}</b><br>
-            Nombre: <b>${alumno.nombreCompleto()}</b><br>
-            Grupo: <b>${alumno.Grupo}</b><br><br>
-            `)
-            })
-        }
-    }
-}
-
-const inscripcion = (materia) => {
-    let checkMateria = false; 
-    Principal:
-    for (let mat of materiasEscuela) {
-        if (mat.nombre == materia) {
-            let matricula = prompt('Ingresa tu numero de matricula: '); 
-            for (let alumno of mat.alumnos) {
-                if (alumno.Matricula == matricula) { alert('Este alumno ya ha sido registrado');  break Principal; ;}
-                else if (mat.alumnos.length < 20) {
-                    checkMateria = true;
-                    alert('Has sido registrado'); 
-                    break Principal; 
-                } else alert('Esta materia a alcanzado su maxima capacidad'); break Principal;
-            }
-        }
-    }
-}
-
-let matUsuario = prompt('Ingresa la materia a inscribirte: '); 
-
-inscripcion(matUsuario);
-infoMaterias(matUsuario); 
+console.dir(persona); 
