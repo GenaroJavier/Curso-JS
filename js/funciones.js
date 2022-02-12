@@ -1,33 +1,44 @@
-/*Metodos de consola*/
+//Historia de cogla 5.1
 
-//Limpia la consola 
-console.clear(); 
+let materias = {
+    //%asistenas, calificacion, evidenciasEntregadas de 5
+    esp: [73, 10, 3], 
+    mat: [76, 7, 5], 
+    his: [83, 9, 5], 
+    geo: [93, 8, 2], 
+    fce: [69, 9, 1], 
+    alg: [72, 9, 3], 
+    cal: [62, 5, 2], 
+    inf: [92, 10, 3], 
+    art: [85, 7, 5], 
+    dep: [69, 10, 5]
+}
 
-// Aparece un mensaje de error en la consola si la afirmacion es false, si la afirmacion es verdadera, no aparecera nada. 
-console.assert(5>2); 
+let promedio=0, cont=0; 
 
-//Muestra un mensaje de error
-console.error('Esto es un error'); 
+for (let materia in materias) {
+    cont++;
+    promedio += materias[materia][1]; 
+}
 
-//Emite un mensaje informativo a la consola web. En alguna navegadores incluye un icono.
-console.info('Esto es un mensaje con Informacion importante'); 
+//Para poder llenar la tabla
+function Resultados(materia, asistencias, evidencias, estatus) {
+    this.materia = materia;
+    this.asistencias = asistencias+'%';
+    this.evidencias = evidencias;   
+    this.estatus = estatus;   
+}
 
-//Muestra un mensaje en la consola web (o el interprete de Js)
-console.log('Esto es un mensaje'); 
+let mat = []; 
 
-//Esta funcion toma un argumento obligatorio: data, que debe ser un array o un objeto y un parametro adicional columns y nos muestra 
-//un tabla en consola.
+for (let materia in materias) {
+    if(materias[materia][0]<70 || materias[materia][2]<3){
+        mat.push(materia = new Resultados(materia, materias[materia][0], materias[materia][2], "REPROBADO")); 
+    } else 
+        mat.push(materia = new Resultados(materia, materias[materia][0], materias[materia][2], "APROBADO")); 
+}
 
-console.table([1, 2, 3, 4, 5, 6]);
-
-//Imprime un mensaje de advertencia. 
-console.warn('Cuidado esto es un mensaje de advertencia'); 
-
-//Despliega una lista interactiva de las propiedad del objeto Js especificado. 
-let persona = {
-    nombre: 'Genaro', 
-    ApP: 'Perez',
-    ApM: 'Lopez'
-};
-
-console.dir(persona); 
+console.group(); 
+console.table(mat);
+console.log(`Tu promedio final es: ${promedio/mat.length}`); 
+console.groupEnd(); 
