@@ -1,12 +1,20 @@
-//titulo 1
-document.write(document.getElementById('titulo-1'));
+/**
+ * Metodos de para definir, eliminar y obtener atributos.
+ */
 
-//parrafo 1
-document.write('<br>' + document.getElementById('parrafo-1'));
+const rangoEdad = document.querySelector(".RangoEdad"); 
 
+const cambiar = () => {
+    //asigna un atributo
+    rangoEdad.setAttribute('type', 'text'); 
+}
 
-//titulo 2
-document.write('<br>' + document.getElementsByTagName('encabezado-1'));
+const leer = () => {
+    //Obtiene un atributo
+    document.write(rangoEdad.getAttribute('type')); 
+}
 
-//parrafo 2
-document.write('<br>' + document.get
+const eliminar = () => {
+    //Elimina un atributo
+    rangoEdad.removeAttribute('class'); 
+}
