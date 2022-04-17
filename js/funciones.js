@@ -1,20 +1,30 @@
 /**
- * Metodos de para definir, eliminar y obtener atributos.
+ * Atributos globales
  */
 
-const rangoEdad = document.querySelector(".RangoEdad"); 
+const titulo = document.getElementById('titulo'); 
 
-const cambiar = () => {
-    //asigna un atributo
-    rangoEdad.setAttribute('type', 'text'); 
-}
+//Permite hacer un elemento editable 
+//titulo.setAttribute('contentEditable', true);  
 
-const leer = () => {
-    //Obtiene un atributo
-    document.write(rangoEdad.getAttribute('type')); 
-}
 
-const eliminar = () => {
-    //Elimina un atributo
-    rangoEdad.removeAttribute('class'); 
-}
+
+//Cambia la direccion del texto 
+/**
+ * rtl (derecha - izquiera)
+ * ltr (izquierda - derecha)
+ */
+
+//titulo.setAttribute('dir', 'rtl'); 
+
+//Muestra o oculta un elemento
+//titulo.setAttribute('hidden', true); 
+
+//Nos permite modificar el tabindex de un elemento
+// titulo.setAttribute('tabindex', '0'); 
+
+//Nos permite especificar un titulo al elemento
+//titulo.setAttribute('title', 'Esto es un titulo'); 
+
+
+//Aun quedan mas atributos globales, se recomienda seguir aprendiendo de la vida y programacion. 
