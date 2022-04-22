@@ -1,40 +1,55 @@
 /**
- * Creación de elementos
+ * Obtención y modificación de childs
  */
 
 const contenedor = document.querySelector(".contenedor"); 
 
-//Crea un elemento 
-const item = document.createElement("LI");
+/**
+ * Estas funciones nos permiten obtener el primer y ultimo elemento
+ * de un archivo. 
+ * 
+ * Nota: Hay que tener cuidado con esto, ya que no nos devolvera el
+ * resultado esperado por los espacios que tenemos en el html. 
+ * 
+ * ej: <div class="contenedor"><h2>Un h2 común</h2>
+ */
 
-//Creas un nodo de tipo texto
-const texto_del_item = document.createTextNode("Esto es un item de la lista");
+const firs_child = contenedor.firstChild;
+const last_child = contenedor.lastChild;
 
-//(appendChild) Es un metodo que se aplica al padre pero se toma como parametro al hijo
-item.appendChild(texto_del_item);
-contenedor.appendChild(item);
-
-console.log(item); 
+// console.log(firs_child);
 
 /**
- * Tambien se puede hacer de la siguiente forma
- * (este metodo es poco practico)
+ * Para solucionar esos problemas es necesario utilizar la siguiente 
+ * funcion
  */
- const item2 = document.createElement("LI");
- item2.innerHTML = "Esto es un 2 elemento"; 
- contenedor.appendChild(item2);
 
- /**
-  * Con esta funcion podemos ahorranos todos esos recursos 
-  * desperdiciados al momento de crear elementos con el dom 
-  */
+const firs_child_2 = contenedor.firstElementChild;
+const firs_child_3 = contenedor.lastElementChild; 
 
- const fragmento = document.createDocumentFragment("LI");
+// console.log(firs_child_2); 
 
- for (let x = 0; x<10; x++) {
-    const item3 = document.createElement("LI");
-    item3.innerHTML = "Item de la lista: " + (parseInt(x)+1); 
-    fragmento.appendChild(item3);
- }
+/**
+ * Esta funciona me devuelve todos los hijos del contenedor
+ * pero, es importante tener en consideración que No, nos devuelve un array
+ * si no que nos devuelve un nodeList. 
+ * 
+ * Aunque nos devuelve espacios como en las primeras funciones. 
+ * (Se puede recorrer con un foreach)
+ */
+const hijos = contenedor.childNodes; 
 
- contenedor.appendChild(fragmento);
+// console.log(hijos);
+
+/**
+ * Nos devuelve todas las etiquetas del contenedor al igual que la funcion
+ * anterior no devuelve un array, si no que retorna un HTMLColletion. 
+ * 
+ * Para recorrerlo se usa un for. 
+ */
+
+const hijos_2 = contenedor.children; 
+
+for (hijo of hijos_2) {
+    console.log(hijo); 
+}
