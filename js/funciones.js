@@ -1,15 +1,11 @@
 /**
- * Propiedades de hermanos
+ * 
+ * 
+ * Nos permite seleccionar el elemento ascendete mas cercano 
+ * que coincida con nuestro selector.
  */
 
-const contenedor = document.querySelector('.contenedor');
 
-const tit_ant = document.querySelector('.titulo_antiguo');
+const contenedor = document.querySelector('.div-3');
 
-const tit_nue = document.createElement('h2'); 
-
-const parrafo = document.querySelector('.parrafo');
-
-//Te muestra los elementos anteriores o siguientes de un elemento
-console.log(tit_ant.nextElementSibling); 
-console.log(tit_ant.previousElementSibling); 
+console.log(contenedor.closest('.div-2')); 
