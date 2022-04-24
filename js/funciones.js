@@ -1,5 +1,5 @@
 /**
- * Propiedades de parents
+ * Propiedades de hermanos
  */
 
 const contenedor = document.querySelector('.contenedor');
@@ -10,9 +10,6 @@ const tit_nue = document.createElement('h2');
 
 const parrafo = document.querySelector('.parrafo');
 
-tit_nue.innerHTML = 'Titulo nuevo'; 
-
-//Te retorna el elemento padre de un elemento. 
-console.log(parrafo.parentElement);
-console.log(tit_ant.parentElement);
-console.log(contenedor.parentElement);
+//Te muestra los elementos anteriores o siguientes de un elemento
+console.log(tit_ant.nextElementSibling); 
+console.log(tit_ant.previousElementSibling); 
