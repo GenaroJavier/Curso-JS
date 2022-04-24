@@ -1,55 +1,24 @@
 /**
- * Obtención y modificación de childs
+ * Métodos de childs 
  */
 
-const contenedor = document.querySelector(".contenedor"); 
+const contenedor = document.querySelector('.contenedor');
 
-/**
- * Estas funciones nos permiten obtener el primer y ultimo elemento
- * de un archivo. 
- * 
- * Nota: Hay que tener cuidado con esto, ya que no nos devolvera el
- * resultado esperado por los espacios que tenemos en el html. 
- * 
- * ej: <div class="contenedor"><h2>Un h2 común</h2>
- */
+const tit_ant = document.querySelector('.titulo_antiguo');
 
-const firs_child = contenedor.firstChild;
-const last_child = contenedor.lastChild;
+const tit_nue = document.createElement('h2'); 
 
-// console.log(firs_child);
+const parrafo = document.querySelector('.parrafo');
 
-/**
- * Para solucionar esos problemas es necesario utilizar la siguiente 
- * funcion
- */
+tit_nue.innerHTML = 'Titulo nuevo'; 
 
-const firs_child_2 = contenedor.firstElementChild;
-const firs_child_3 = contenedor.lastElementChild; 
+//Remplaza un elemento por otro
+contenedor.replaceChild(tit_nue, tit_ant); 
 
-// console.log(firs_child_2); 
+//Elimina un elemento del contenedor
+contenedor.removeChild(parrafo); 
 
-/**
- * Esta funciona me devuelve todos los hijos del contenedor
- * pero, es importante tener en consideración que No, nos devuelve un array
- * si no que nos devuelve un nodeList. 
- * 
- * Aunque nos devuelve espacios como en las primeras funciones. 
- * (Se puede recorrer con un foreach)
- */
-const hijos = contenedor.childNodes; 
+//La funcion hasChildNodes verifica si un contenedor tiene hijos
 
-// console.log(hijos);
+tit_nue.hasChildNodes() ? document.write('El contenedor tiene hijos') : document.write('El contenedor NO tiene hijos')
 
-/**
- * Nos devuelve todas las etiquetas del contenedor al igual que la funcion
- * anterior no devuelve un array, si no que retorna un HTMLColletion. 
- * 
- * Para recorrerlo se usa un for. 
- */
-
-const hijos_2 = contenedor.children; 
-
-for (hijo of hijos_2) {
-    console.log(hijo); 
-}
