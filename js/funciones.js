@@ -1,30 +1,41 @@
 /**
  * 
- * Historia de cofla. 
+ * screen, screenleft, screentop
  */
 
-// const url = "http://youtube.com/"; 
+//devuelve una referencia al pbjeto asociado con la ventana
+const pantalla = window.screen; 
 
-//Abrir una ventana
-// const ventana = window.open(url); 
+// console.log(pantalla);
 
-//Cerrar una ventana
-// window.close(ventana);
+// console.log(pantalla.width);
+// console.log(pantalla.height);
 
-//Indica si la ventana referenciada esta cerrada o no
-// console.log(ventana.closed); 
 
-//Detiene que una pagina se siga cargando 
-// ventana.stop();
+/**
+ * Nos devuelve la distancia que hay desde el borde 
+ * del navegador hasta el borde de mi pantalla. 
+ */
 
-// alert("Una alerta comun y corriente");
+const pantalla_monitorL = window.screenLeft; 
+const pantalla_monitorT = window.screenTop; 
 
-//Con esta funcion nosotros podemos imprimir la pagina gracias a js y el navegador
-// print();
+// console.log(pantalla_monitorL);
+// console.log(pantalla_monitorT);
 
-//Nos permite obtener un dato del usuario, todo lo que retorne sera siempre un string. 
-// prompt("dame un dato");
+/**
+ * scrollx scrolly 
+ * devuelven el numero de pixeles que el documento
+ * se desplaza horizontalmente y verticalmente.
+ */
 
-//Muestra una ventana como la del alert pero con las opciones de si y no para que el usuario escoja, nos devuelve un true o una false. 
-// confirm("Estas seguro de seguir continuando con este curso?");
+// const scrollY = window.scrollY;
+// const scrollX = window.scrollX;
 
+// console.log(scrollX);
+// console.log(scrollY);
+
+//tambien podemos poner scrollTo, que son casi lo mismo
+//basicamente mueve el scroll a la posicion que nosotros 
+//le especifiquemos 
+window.scroll(200, 300);
