@@ -1,41 +1,29 @@
 /**
- * 
- * screen, screenleft, screentop
+ * Location 
  */
 
-//devuelve una referencia al pbjeto asociado con la ventana
-const pantalla = window.screen; 
+const pathName = () => {
+    //Nos devuelve la ruta del pathname 
+    alert(window.location.pathname);
+}
 
-// console.log(pantalla);
+const href = () => {
+    //Devuelve el href de la pagina actual
+    alert(window.location.href);
+}
 
-// console.log(pantalla.width);
-// console.log(pantalla.height);
+const hostName = () => {
+    //Devuelve el hostname de la pagina
+    alert(window.location.hostname);
+}
+
+const protocol = () => {
+    //Devuelve el protocolo de la pagina
+    alert(window.location.protocol);
+}
 
 
-/**
- * Nos devuelve la distancia que hay desde el borde 
- * del navegador hasta el borde de mi pantalla. 
- */
-
-const pantalla_monitorL = window.screenLeft; 
-const pantalla_monitorT = window.screenTop; 
-
-// console.log(pantalla_monitorL);
-// console.log(pantalla_monitorT);
-
-/**
- * scrollx scrolly 
- * devuelven el numero de pixeles que el documento
- * se desplaza horizontalmente y verticalmente.
- */
-
-// const scrollY = window.scrollY;
-// const scrollX = window.scrollX;
-
-// console.log(scrollX);
-// console.log(scrollY);
-
-//tambien podemos poner scrollTo, que son casi lo mismo
-//basicamente mueve el scroll a la posicion que nosotros 
-//le especifiquemos 
-window.scroll(200, 300);
+const assign = () => {
+    //carga un nuevo documento
+    alert(window.location.assign('https://www.youtube.com'));
+}
